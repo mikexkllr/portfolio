@@ -10,6 +10,7 @@
 
 body {
     font-family: poppins-regular;
+    background-color: rgb(225, 225, 225);
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
     min-width: 30rem;
     width: 40vw;
     height: 80vh;
-    background-color: burlywood;
+    background-color: lightgrey;
 }
 
 .center {
