@@ -1,4 +1,20 @@
+    @font-face { 
+        font-family: poppins-regular; 
+        src: url('../assets/fonts/Poppins/Poppins-Regular.ttf'); 
+    } 
 
+    @font-face { 
+        font-family: poppins-medium; 
+        src: url('../assets/fonts/Poppins/Poppins-Medium.ttf'); 
+    } 
+
+    body {
+        font-family: poppins-regular;
+    }
+
+    h1 {
+        font-family: poppins-medium;
+    }
 
     .container {
         display: flex;
