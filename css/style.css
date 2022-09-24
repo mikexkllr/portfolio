@@ -23,13 +23,18 @@ h1 {
     flex-wrap: wrap;
 }
 
-.item {
+.item, .item-picture {
     padding: 1rem;
     border-radius: 1.5rem;
     min-width: 30rem;
     width: 40vw;
     height: 80vh;
     background-color: lightgrey;
+}
+
+.item-picture {
+    background-image: url("/assets/img/landingpage_placeholder.jpg");
+    background-size: cover;
 }
 
 .center {
