@@ -9,7 +9,10 @@ page-content {
     align-items: center;
 }
 
-element-container, picture-container, headline-container, center-container  {
+element-container,
+picture-container,
+headline-container,
+center-container {
     padding: 1rem;
     border-radius: 1.5rem;
     min-width: 30rem;
@@ -18,7 +21,7 @@ element-container, picture-container, headline-container, center-container  {
 }
 
 picture-container {
-    background-image: url('/assets/img/landingpage_placeholder.jpg');
+    background-image: url('/assets/img/mike_frankfurt.JPG');
     background-size: cover;
 }
 
@@ -48,8 +51,4 @@ center-container {
 .headline-sec {
     font-family: poppins-light;
     font-size: 3em;
-}
-
-.arrow-right-inline {
-    height: 4em;
 }
