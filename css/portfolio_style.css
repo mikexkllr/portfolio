@@ -1,0 +1,101 @@
+/*
+    The actual styles needed for the framework - this is kinda generic so the other stylesheets are for custom styling 
+*/
+
+/*
+    main class which is passed to slider element in the initialization div element
+*/
+.main_slider {
+    --slide-transition-speed: 1000ms;
+}
+
+/* every slide container gets this class iterative if its defined in the main element/ div */
+.slide_element {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: all ease-in-out attributes(--slide-transition-speed);
+    left: -100%;
+}
+
+/* is used when slide is active */
+.slide_element_active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    transition: all ease-in-out attributes(--slide-transition-speed);
+    left: 0%;
+}
+
+/** vanity element is used to display pagination  */
+.main_slider_vanity {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* navigation which is not finished yet has this assigned a main class when its created in js  */
+.navigation_main {
+    
+}
+
+/* item of the navigation */
+.navigation_item {
+    position: absolute;
+    top: calc(50% - 2rem);
+    color: #fff;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    border: 1px solid;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* next button which is used in navigation - navigation is currently hidden because not finished yet */ 
+.navigation_next {
+    left: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* prev button which is used in navigation - navigation is currently hidden because not finished yet */ 
+.navigation_prev {
+    right: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/** circle which is used to display pagination **/
+.pagination_item {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 2%;
+    cursor: pointer;
+}
+
+/** circle which is used to display pagination - currently active element **/
+.pagination_item_active {
+    background-color: grey;
+}
+
+/** this is the parent of the pagination item to show pagination items in a row via flexbox */
+.main_pagination {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    z-index: 2;
+    align-items: center;
+    bottom: 4rem;
+    flex-direction: row;
+}
+
+
+/* 
+    stuff which is custom for the page 
+*/

@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Firstname Lastname Portfolio</title>
-  </head>
-    <body>
-      <div class="center">
-        <div class="container">
-            <div class="item">
-                <h1>TEST HEADLINE</h1>
-                lallallala
-            </div>
-            <div class="item">
-                lallallalas
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio_style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <script src="js/portfolio_framework.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <title>Mike Keller Portfolio</title>
+</head>
+
+<body>
+  <main-container>
+    <page-content>
+      <picture-container></picture-container>
+      <headline-container>
+        <div class="headline-main">
+          <span>MIKE KELLER </span>
         </div>
-    </div>
-    </body>
+        <div class="headline-sec">
+          passionate about software development and coding
+        </div>
+        <div class="arrow-right next-btn">
+          <img class="arrow-right-inline" src="assets/icons/arrow-right-solid.svg" />
+        </div>
+        <span id="prev-btn"></span>
+        <span id="pagination"></span>
+      </headline-container>
+    </page-content>
+    <page-content>
+      <center-container>
+        <div class="headline-main">
+          <span>My Skills</span>
+        </div>
+        <div class="headline-sec">
+          <p> I have coded many mobile, web and desktop apps over the years. </p>
+          <p> Mainly for large automotive companies in Germany 🇩🇪 </p>
+        </div>
+      </center-container>
+      <element-container>
+        <h1>Coding languages</h1>
+      </element-container>
+    </page-content>
+  </main-container>
+  <!-- <footer id="pagination"></footer> -->
+</body>
+
 </html>
