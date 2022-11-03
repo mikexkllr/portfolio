@@ -1,14 +1,15 @@
-.content {
+main-container {
     font-family: poppins-regular;
 }
 
-.container {
+page-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.element-container, .picture-container, .headline-container  {
+element-container, picture-container, headline-container, center-container  {
     padding: 1rem;
     border-radius: 1.5rem;
     min-width: 30rem;
@@ -16,23 +17,27 @@
     height: 80vh;
 }
 
-.picture-container {
-    background-image: url("/assets/img/landingpage_placeholder.jpg");
+picture-container {
+    background-image: url('/assets/img/landingpage_placeholder.jpg');
     background-size: cover;
 }
 
-.main-container {
-    height: 100vh;
+main-container {
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.headline-container {
+headline-container {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+}
+
+center-container {
+    justify-content: center;
+    align-items: center;
 }
 
 .headline-main {
