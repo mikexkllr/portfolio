@@ -4,13 +4,13 @@ const PortfolioFramework = {
         slides: null,
         options: {
             delay: 0, // delay in ms to begin the timer
-            speed: 500000, // time in ms till next slide 
-            transition: 1000, // time in ms for animation speed
-            pagination: false, // activates pagination which is displayed in footer
+            speed: 50000, // time in ms till next slide 
+            transition: 5000, // time in ms for animation speed
+            pagination: true, // activates pagination which is displayed in footer
             navigation: true, // activates navigation buttons 
-            paginationSelector: ".pagination",
-            nextButtonSelector: ".next-btn",
-            prevButtonSelector: ".prev-btn",
+            paginationSelector: "pagination",
+            nextButtonSelector: "next-btn",
+            prevButtonSelector: "prev-btn",
         },
         timer: null,
         pagination: null,
@@ -22,12 +22,12 @@ const PortfolioFramework = {
             return
         }
         PortfolioFramework.attributes.slider = document.querySelector(el)
-        
+
         PortfolioFramework.setOptionsFromConfig()
 
         await PortfolioFramework.create()
     },
-    setOptionsFromConfig: function(options) {
+    setOptionsFromConfig: function (options) {
         for (const i in options) {
             // loop threw given custom option object to overwrite options
             PortfolioFramework.options.this[i] = options[i]
@@ -83,7 +83,7 @@ const PortfolioFramework = {
         // set the given slide active by hiding all other slides and showing the given via css class with opacity
         for (let i = 0; i < PortfolioFramework.attributes.slides.length; i++) {
             PortfolioFramework.attributes.slides[i].classList.remove("slide_element_active")
-            
+
             if (PortfolioFramework.attributes.slides[i] === slide) {
                 PortfolioFramework.attributes.currentActiveIndex = i
             }
@@ -117,9 +117,9 @@ const PortfolioFramework = {
         // starting interval again
         PortfolioFramework.start()
     },
-    createNavigation: function() {
+    createNavigation: function () {
         // asking if navigation is disabled
-        if(PortfolioFramework.attributes.options.navigation === false) {
+        if (PortfolioFramework.attributes.options.navigation === false) {
             return
         }
 
@@ -156,7 +156,7 @@ const PortfolioFramework = {
          */
 
     },
-    prev: function() {
+    prev: function () {
         // clears interval to restart if prev btn clicked
         clearInterval(PortfolioFramework.attributes.timer)
         // find out which slide is currently active
@@ -170,8 +170,8 @@ const PortfolioFramework = {
         // starting interval again
         PortfolioFramework.start()
     },
-    pagination: function() {
-        if(PortfolioFramework.attributes.options.pagination === false) {
+    pagination: function () {
+        if (PortfolioFramework.attributes.options.pagination === false) {
             return
         }
 
@@ -181,7 +181,7 @@ const PortfolioFramework = {
         for (let i = 0; i < PortfolioFramework.attributes.slides.length; i++) {
             const paginationItem = document.createElement("div")
             paginationItem.classList.add("pagination_item")
-            paginationItem.addEventListener("click", (e) => { 
+            paginationItem.addEventListener("click", (e) => {
                 let index = 0
                 for (let i = 0; i < PortfolioFramework.attributes.pagination.length; i++) {
                     if (PortfolioFramework.attributes.pagination[i] === e.target) {
@@ -194,7 +194,7 @@ const PortfolioFramework = {
             mainPaginationElement.appendChild(paginationItem)
         }
 
-        
+
         document.querySelector(PortfolioFramework.attributes.options.paginationSelector).appendChild(mainPaginationElement)
         PortfolioFramework.attributes.pagination = document.getElementsByClassName("pagination_item")
     },

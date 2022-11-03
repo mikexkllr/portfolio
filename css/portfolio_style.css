@@ -6,7 +6,7 @@
     main class which is passed to slider element in the initialization div element
 */
 .main_slider {
-    --slide-transition-speed: 1000ms;
+    --slide-transition-speed: 3000ms;
 }
 
 /* every slide container gets this class iterative if its defined in the main element/ div */
@@ -15,7 +15,6 @@
     z-index: 0;
     opacity: 0;
     transition: all ease-in-out attributes(--slide-transition-speed);
-    left: -100%;
 }
 
 /* is used when slide is active */
@@ -26,7 +25,6 @@
     z-index: 1;
     opacity: 1;
     transition: all ease-in-out attributes(--slide-transition-speed);
-    left: 0%;
 }
 
 /** vanity element is used to display pagination  */
@@ -37,31 +35,27 @@
 }
 
 /* navigation which is not finished yet has this assigned a main class when its created in js  */
-.navigation_main {
-    
-}
+.navigation_main {}
 
 /* item of the navigation */
 .navigation_item {
-    position: absolute;
     top: calc(50% - 2rem);
     color: #fff;
     height: 4rem;
     width: 4rem;
     display: flex;
     border: 1px solid;
-    z-index: 2;
     cursor: pointer;
 }
 
-/* next button which is used in navigation - navigation is currently hidden because not finished yet */ 
+/* next button which is used in navigation - navigation is currently hidden because not finished yet */
 .navigation_next {
     left: 2rem;
     align-items: center;
     justify-content: center;
 }
 
-/* prev button which is used in navigation - navigation is currently hidden because not finished yet */ 
+/* prev button which is used in navigation - navigation is currently hidden because not finished yet */
 .navigation_prev {
     right: 2rem;
     align-items: center;
@@ -73,28 +67,28 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: black;
+    background-color: grey;
     margin: 0 2%;
     cursor: pointer;
 }
 
 /** circle which is used to display pagination - currently active element **/
 .pagination_item_active {
-    background-color: grey;
+    background-color: black;
 }
 
 /** this is the parent of the pagination item to show pagination items in a row via flexbox */
 .main_pagination {
     position: absolute;
     display: flex;
-    width: 100%;
-    justify-content: center;
-    z-index: 2;
+    width: 80%;
+    justify-content: flex-end;
+    z-index: 3;
     align-items: center;
-    bottom: 4rem;
+    bottom: 3rem;
     flex-direction: row;
+    right: 3rem;
 }
-
 
 /* 
     stuff which is custom for the page 
