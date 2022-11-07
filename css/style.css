@@ -2,6 +2,14 @@ main-container {
     font-family: poppins-regular;
 }
 
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
 page-content {
     display: flex;
     justify-content: space-around;
@@ -21,7 +29,7 @@ center-container {
 }
 
 picture-container {
-    background-image: url('/assets/img/mike_frankfurt.JPG');
+    background-image: url('/assets/img/mike_frankfurt.jpg');
     background-size: cover;
 }
 
@@ -51,4 +59,105 @@ center-container {
 .headline-sec {
     font-family: poppins-light;
     font-size: 3em;
+}
+
+
+/* 
+
+SKILL BARS
+skill bar is used to show off skills
+
+*/
+
+
+/* Make sure that padding behaves as expected */
+skill-bar-container {
+    box-sizing: border-box
+}
+
+/* Container for skill bars */
+skill-bar-background {
+    display: block;
+    width: 100%;
+    /* Full width */
+    background-color: #ddd;
+    /* Grey background */
+    border-radius: 1rem;
+}
+
+skill-bar {
+    display: block;
+    height: 1rem;
+    text-align: right;
+    /* Right-align text */
+    padding-top: 10px;
+    /* Add top padding */
+    padding-bottom: 10px;
+    /* Add bottom padding */
+    color: white;
+    /* White text color */
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.flutter {
+    width: 90%;
+}
+
+/* Green */
+.swift {
+    width: 70%;
+}
+
+/* Blue */
+.js {
+    width: 85%;
+}
+
+/* Red */
+.php {
+    width: 80%;
+}
+
+/* Red */
+.java {
+    width: 60%;
+}
+
+/* Red */
+.sql {
+    width: 85%;
+}
+
+/* Red */
+.mongodb {
+    width: 70%;
+}
+
+/* Dark Grey */
+
+
+/** 
+Gradient background animation
+**/
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+skill-bar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
 }

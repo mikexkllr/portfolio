@@ -34,33 +34,29 @@
     z-index: 1;
 }
 
-/* navigation which is not finished yet has this assigned a main class when its created in js  */
-.navigation_main {}
-
 /* item of the navigation */
-.navigation_item {
-    top: calc(50% - 2rem);
-    color: #fff;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    border: 1px solid;
+.navigation_item,
+.next-btn,
+.prev-btn {
+    color: grey;
+    width: 17px;
+    height: 22px;
     cursor: pointer;
 }
 
-/* next button which is used in navigation - navigation is currently hidden because not finished yet */
-.navigation_next {
-    left: 2rem;
-    align-items: center;
-    justify-content: center;
+.next-btn {
+    background: url("../assets/icons/chevron-right-solid.svg");
 }
 
-/* prev button which is used in navigation - navigation is currently hidden because not finished yet */
-.navigation_prev {
-    right: 2rem;
-    align-items: center;
-    justify-content: center;
+.prev-btn {
+    background: url("../assets/icons/chevron-left-solid.svg");
 }
+
+.next-btn:hover,
+.prev-btn:hover {
+    animation: bounceAnimation .5s ease infinite alternate;
+}
+
 
 /** circle which is used to display pagination **/
 .pagination_item {
@@ -70,6 +66,10 @@
     background-color: grey;
     margin: 0 2%;
     cursor: pointer;
+}
+
+.pagination_item:hover {
+    background-color: blue;
 }
 
 /** circle which is used to display pagination - currently active element **/
@@ -88,6 +88,16 @@
     bottom: 3rem;
     flex-direction: row;
     right: 3rem;
+}
+
+@keyframes bounceAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 /* 

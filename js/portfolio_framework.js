@@ -7,10 +7,9 @@ const PortfolioFramework = {
             speed: 50000, // time in ms till next slide 
             transition: 5000, // time in ms for animation speed
             pagination: true, // activates pagination which is displayed in footer
-            navigation: true, // activates navigation buttons 
             paginationSelector: "pagination",
-            nextButtonSelector: "next-btn",
-            prevButtonSelector: "prev-btn",
+            nextButtonSelector: ".next-btn",
+            prevButtonSelector: ".prev-btn",
         },
         timer: null,
         pagination: null,
@@ -36,12 +35,8 @@ const PortfolioFramework = {
     create: async function () {
         // creates element which houses all slides
         const slides = document.createElement("div")
-        // creates vanity for the pagination and indicator lol
-        const vanity = document.createElement("div")
         // adds class to container of slides so we can style it in css
         slides.classList.add("main_slides_container")
-        // adds class to container of vanity stuff so we can style it in css
-        vanity.classList.add("main_slider_vanity")
         // lets get the html in the slider id div container
         const content = PortfolioFramework.attributes.slider.innerHTML
         // set the html of our created element to the slides defined in the html #slides div tag
@@ -50,10 +45,6 @@ const PortfolioFramework = {
         PortfolioFramework.attributes.slider.innerHTML = ""
         // append our slides in it 
         PortfolioFramework.attributes.slider.append(slides)
-        // append vanity underneath it
-        if (PortfolioFramework.attributes.options.navigation === true) {
-            PortfolioFramework.attributes.slider.append(vanity)
-        }
         // give it a class to style it 
         PortfolioFramework.attributes.slider.classList.add("main_slider")
         // get all slides and set it to attribute
@@ -65,16 +56,13 @@ const PortfolioFramework = {
             PortfolioFramework.attributes.slides[i].classList.add("slide_element")
         }
 
-        // loads navigation
-        PortfolioFramework.createNavigation()
-
         // loads pagination
         PortfolioFramework.pagination()
 
         // activating the first slides ... it gets a class which sets it opacity to 1 
         PortfolioFramework.setActive(PortfolioFramework.attributes.slides[0])
 
-        // we adding a css attributesiable to the element to actually set the transition speed generic 
+        // we adding a css attribute to the element to actually set the transition speed generic 
         PortfolioFramework.attributes.slider.style.setProperty("--slide-transition-speed", PortfolioFramework.attributes.options.transition + "ms");
 
         setTimeout(PortfolioFramework.start, PortfolioFramework.attributes.delay)
@@ -118,43 +106,11 @@ const PortfolioFramework = {
         PortfolioFramework.start()
     },
     createNavigation: function () {
-        // asking if navigation is disabled
-        if (PortfolioFramework.attributes.options.navigation === false) {
-            return
-        }
-
         const nextButtonSelector = document.querySelector(PortfolioFramework.attributes.options.nextButtonSelector)
         nextButtonSelector != null ? nextButtonSelector.addEventListener("click", e => PortfolioFramework.next()) : null
 
         const prevButtonSelector = document.querySelector(PortfolioFramework.attributes.options.prevButtonSelector)
         prevButtonSelector != null ? prevButtonSelector.addEventListener("click", e => PortfolioFramework.prev()) : null
-
-
-        /**
-         * 
-        // Building some nav elements which are getting appended but i kicked it out maybe i continue working on it later
-        const nav = document.createElement("div")
-        nav.classList.add("navigation_main")
-
-        const prev = document.createElement("div")
-        prev.classList.add("navigation_item")
-        prev.classList.add("navigation_prev")
-        prev.innerText = "<"
-        prev.addEventListener("click", e => PortfolioFramework.prev())
-
-        const next = document.createElement("div")
-        next.classList.add("navigation_item")
-        next.classList.add("navigation_next")
-        next.addEventListener("click", e => PortfolioFramework.next())
-        next.innerText = ">"
-
-        nav.append(prev)
-        nav.append(next)
-        
-        const vanity = document.querySelector(".main_slider_vanity")
-        vanity.appendChild(nav)
-         */
-
     },
     prev: function () {
         // clears interval to restart if prev btn clicked
@@ -175,8 +131,15 @@ const PortfolioFramework = {
             return
         }
 
+        let prevButton = document.createElement("span")
+        let nextButton = document.createElement("span")
+        prevButton.classList.add("prev-btn")
+        nextButton.classList.add("next-btn")
+
         let mainPaginationElement = document.createElement("div")
         mainPaginationElement.classList.add("main_pagination")
+
+        mainPaginationElement.appendChild(prevButton)
 
         for (let i = 0; i < PortfolioFramework.attributes.slides.length; i++) {
             const paginationItem = document.createElement("div")
@@ -194,9 +157,12 @@ const PortfolioFramework = {
             mainPaginationElement.appendChild(paginationItem)
         }
 
-
-        document.querySelector(PortfolioFramework.attributes.options.paginationSelector).appendChild(mainPaginationElement)
+        mainPaginationElement.appendChild(nextButton)
+        let paginationSelectorNode = document.querySelector(PortfolioFramework.attributes.options.paginationSelector)
+        paginationSelectorNode.appendChild(mainPaginationElement)
         PortfolioFramework.attributes.pagination = document.getElementsByClassName("pagination_item")
+        // loads navigation
+        PortfolioFramework.createNavigation()
     },
 }
 

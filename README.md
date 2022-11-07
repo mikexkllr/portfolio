@@ -1,9 +1,13 @@
-# portfolio
+# Portfolio
 
 by Mike and Steffen
 
 ## How to use our custom javascript framework?
-Add the `portfolio_framework.js` and `portfolio_style.css` files to your site. Create a main element to act as the wrapper for your pages. All first level child elements will automatically be created as pages.
+
+Add the `portfolio_framework.js` and `portfolio_style.css` files to your site. 
+Create a main element to act as the wrapper for your pages. 
+All first level child elements will automatically be created as pages.
+
 
 *Example:*
 ```
@@ -24,4 +28,5 @@ PortfolioFramework.init("main-container", {
     nextButtonSelector: "next-btn",
     prevButtonSelector: "prev-btn",
 })
+
 ```
