@@ -20,12 +20,17 @@ page-content {
 element-container,
 picture-container,
 headline-container,
+scrollable-container,
 center-container {
     padding: 1rem;
     border-radius: 1.5rem;
     min-width: 30rem;
     width: 40vw;
-    height: 80vh;
+    height: 70vh;
+}
+
+scrollable-container {
+    overflow: scroll;
 }
 
 picture-container {
@@ -160,4 +165,11 @@ skill-bar {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
+}
+
+.card-element {
+    margin: 1rem;
+    padding: 0.2rem;
+    background-color: rgb(228, 228, 228);
+    border-radius: 8px;
 }
