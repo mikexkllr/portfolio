@@ -20,7 +20,9 @@ function fetchGithubApiRepos() {
         .then(function (data) {
             for (repo of data) {
                 console.log(repo)
+                let mainElement = document.createElement("a")
                 let elementToAppend = document.createElement("div")
+                mainElement.setAttribute("href", repo["html_url"])
                 elementToAppend.classList.add("card-element")
                 let headline = document.createElement("h2")
                 headline.innerText = repo.name
@@ -28,7 +30,8 @@ function fetchGithubApiRepos() {
                 description.innerText = repo.description
                 elementToAppend.appendChild(headline)
                 elementToAppend.appendChild(description)
-                htmlRepoContainer.appendChild(elementToAppend)
+                mainElement.appendChild(elementToAppend)
+                htmlRepoContainer.appendChild(mainElement)
             }
         })
         .catch(err => console.error(err));

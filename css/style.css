@@ -10,6 +10,11 @@ h2 {
     font-size: 24px;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 page-content {
     display: flex;
     justify-content: space-around;
@@ -172,4 +177,10 @@ skill-bar {
     padding: 0.2rem;
     background-color: rgb(228, 228, 228);
     border-radius: 8px;
+    display: block;
+}
+
+.card-element:hover {
+    background-color: grey;
+    cursor: pointer;
 }
