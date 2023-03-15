@@ -1,8 +1,6 @@
 # Portfolio
 
-by Mike and Steffen
-
-## How to use our custom javascript framework?
+## How to use the custom javascript framework?
 
 Add the `portfolio_framework.js` and `portfolio_style.css` files to your site. 
 Create a main element to act as the wrapper for your pages. 
