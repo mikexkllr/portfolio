@@ -5,6 +5,7 @@
 /*
     main class which is passed to slider element in the initialization div element
 */
+
 .main_slider {
     --slide-transition-speed: 3000ms;
 }
@@ -25,6 +26,14 @@
     z-index: 1;
     opacity: 1;
     transition: all ease-in-out attributes(--slide-transition-speed);
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .slide_element_active {
+        width: fit-content;
+    }
 }
 
 /** vanity element is used to display pagination  */
