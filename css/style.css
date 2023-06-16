@@ -31,7 +31,7 @@ center-container {
     border-radius: 1.5rem;
     min-width: 30rem;
     width: 40vw;
-    height: 70vh;
+    height: auto;
 }
 
 scrollable-container {
@@ -41,6 +41,8 @@ scrollable-container {
 picture-container {
     background-image: url('/assets/img/mike_frankfurt.jpg');
     background-size: cover;
+    height: 70vh;
+    width: 40vw;
 }
 
 main-container {
