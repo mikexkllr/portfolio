@@ -79,7 +79,7 @@
 
 /** this is the parent of the pagination item to show pagination items in a row via flexbox */
 .main_pagination {
-    position: absolute;
+    position: fixed;
     display: flex;
     width: 80%;
     justify-content: flex-end;
